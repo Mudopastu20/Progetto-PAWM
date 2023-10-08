@@ -32,7 +32,7 @@
                 <a href="#">home</a>
                 <a href="#about">about</a>
                 <a href="#menu">menu</a>
-                <a href="#contact">contatti</a>
+                <a href="#contact">lascia recensione</a>
             </nav>
 
             <div class="icons">
@@ -52,9 +52,9 @@
         </section>
 
         <!--
-            About us
+            Chi siamo
         -->
-        <h1 class="heading">about</h1>
+        <h1 class="heading">chi siamo</h1>
 
         <section class="about" id="about">
             <div class="row">
@@ -139,42 +139,79 @@
         </section>
 
         <!--
-            Contatti
+            Lascia recensioni
         -->
 
         <section class="contact" id="contact">
 
-            <h1 class="heading">Contatti</h1>
+            <h1 class="heading">Lascia Recensioni</h1>
 
             <div class="row">
+
                 <div class="image">
-                    <img srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyQFC1EgoOctFpkuXe9Ius0-HAejHLapHxqjYS0pZ_0aahHbcemBA7jgKbPWub-ajiYIc&usqp=CAU" alt="">
+
+                    <img src="C:\Users\pastu\Desktop\Immagini per il sito web\Recensioni.png" alt="">
+
                 </div>
 
-                <form action="">
-                <h3>Per contattarci</h3>
+                <form id="review-form">
 
-                <div class="inputBox">
-                    <span class="fas fa-user"></span>
-                    <input type="text" placeholder="name">
+                    <h3>Lascia una recensione</h3>
+
+                    <input type="text" id="name" placeholder="Nome" required>
+
+                    <textarea id="review" placeholder="Scrivi la tua recensione" required></textarea>
+
+                    <input type="submit" value="Invia recensione" class="btn">
+
+                </form>
+
+            </div>
+            
+        </section>
+
+        <!--
+            Footer
+        -->
+        <section class="footer">
+
+            <div class="box-container">
+
+                <div class="box">
+                    <img src="C:\Users\pastu\Desktop\Immagini per il sito web\Indirizzo.png" alt="">
+                    <h3>Indirizzo</h3>
+                    <p>Via quintino parotti n.15</p>
+                </div>
+    
+                <div class="box">
+                    <img src="C:\Users\pastu\Desktop\Immagini per il sito web\email simbolo.png" alt="">
+                    <h3>Email</h3>
+                    <a href="#" class="link">infoRistoranteDaFranco@gmail.com</a>
+                </div>
+    
+                <div class="box">
+                    <img src="C:\Users\pastu\Desktop\Immagini per il sito web\contattaci.png" alt="">
+                    <h3>Contattaci</h3>
+                    <p>+39 3123456789
+                        <br> +0732 12345
+                    </p>
+                </div>
+    
+                <div class="box">
+                    <img src="C:\Users\pastu\Desktop\Immagini per il sito web\orari apertura simbolo.png" alt="">
+                    <h3>Apertura</h3>
+                    <p>lunedi - venderdi 8:00 - 24:00
+                       <br> sabato 17:00 - 24:00
+                        <br> domenica 19:00 - 24:00
+                    </p>
                 </div>
 
-                <div class="inputBox">
-                    <span class="fas fa-envelope"></span>
-                    <input type="email" placeholder="email">
-                </div>
+            </div>
 
-                <div class="inputBox">
-                    <span class="fas fa-phone"></span>
-                    <input type="number" placeholder="phone">
-                </div>
-
-                <input type="submit" value="send message" class="btn">
-            </form>
-
-        </div>
+            <div class="credit">creato da <span>Franco & Andrea</span></div>
 
         </section>
+
 
 
         <!--

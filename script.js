@@ -20,3 +20,22 @@ connection.query(query, (error, results, fields) => {
 
 // Chiudi la connessione quando hai finito di usare il database
 connection.end();
+
+
+
+/* query */
+
+let navbar = document.querySelector('.header .navbar')
+
+document.querySelector('#menu-btn').onclick = ()=> {
+
+    navbar.classList.add('active');
+
+}
+
+document.querySelector('#close-navbar').onclick = ()=> {
+
+    navbar.classList.remove('active');
+
+}
+
