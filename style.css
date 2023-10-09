@@ -345,10 +345,10 @@ section{
     .header #menu-btn{
         display: inline-block;
     }
-
-    .header .navbar{
+    .header .navbar {
         position: fixed;
-        top: 0; right: -105%;
+        top: 0;
+        right: -105%;
         width: 30rem;
         background: #fff;
         height: 100%;
@@ -357,11 +357,11 @@ section{
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-flow: column;
-                -ms-flex-flow: column;
+        -ms-flex-flow: column;
+        flex-flow: column;
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
         z-index: 1200;
     }
 

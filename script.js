@@ -1,41 +1,54 @@
-const mysql = require('mysql');
 
-const connection = mysql.createConnection({
+
+
+
+
+const mysql = require('mysql');
+const prompt = require('prompt-sync')();
+
+const mysqlConnection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',  
-  password: 'Andrea99',  
-  database: 'databaseprogettopawm'  
+  user: 'root',
+  password: 'Andrea99',
+  database: 'databaseprogettopawm'
 });
 
-const query = 'SELECT * FROM prenotazioni';
-connection.query(query, (error, results, fields) => {
-  if (error) {
-    console.error('Errore nella query:', error);
+mysqlConnection.connect((err) => {
+  if (err) {
+    console.error('Errore nella connessione al database:', err);
     return;
   }
-
-  // Processa i risultati della query
-  console.log('Risultati della query:', results);
+  console.log('Connessione al database MySQL avvenuta con successo!');
 });
 
-// Chiudi la connessione quando hai finito di usare il database
-connection.end();
+function inviaRecensione() {
+  const nome = prompt('Inserisci il tuo nome: ');
+  const recensione = prompt('Scrivi la tua recensione: ');
 
-
-
-/* query */
-
-let navbar = document.querySelector('.header .navbar')
-
-document.querySelector('#menu-btn').onclick = ()=> {
-
-    navbar.classList.add('active');
-
+  const query = 'INSERT INTO recensioni (nome, recensione) VALUES (?, ?)';
+  mysqlConnection.query(query, [nome, recensione], (err, results) => {
+    if (err) {
+      console.error('Errore nell\'inserimento della recensione:', err);
+      return;
+    }
+    console.log('Recensione inserita correttamente nel database!');
+    mostraRecensioni();
+  });
 }
 
-document.querySelector('#close-navbar').onclick = ()=> {
+function mostraRecensioni() {
+  const query = 'SELECT * FROM recensioni';
+  mysqlConnection.query(query, (err, results) => {
+    if (err) {
+      console.error('Errore nel recupero delle recensioni:', err);
+      return;
+    }
 
-    navbar.classList.remove('active');
-
+    results.forEach((row) => {
+      console.log(`Nome: ${row.nome}, Recensione: ${row.recensione}`);
+    });
+  });
 }
 
+// Esegui invio della recensione e mostra recensioni
+inviaRecensione();
