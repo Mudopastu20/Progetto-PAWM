@@ -322,7 +322,6 @@ section{
     color: var(--primary-color);
 }
 
-/* media queries - riadatta il file su misura a diversi dispositivi (cellulari, pc, ecc...) */
 
 @media (max-width:991px){
 

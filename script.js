@@ -1,8 +1,3 @@
-
-
-
-
-
 const mysql = require('mysql');
 const prompt = require('prompt-sync')();
 
@@ -50,5 +45,4 @@ function mostraRecensioni() {
   });
 }
 
-// Esegui invio della recensione e mostra recensioni
 inviaRecensione();
