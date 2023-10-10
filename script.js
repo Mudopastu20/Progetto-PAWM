@@ -1,48 +1,22 @@
-const mysql = require('mysql');
-const prompt = require('prompt-sync')();
+document.getElementById('modulo-recensione').addEventListener('submit', inviaRecensione);
 
-const mysqlConnection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Andrea99',
-  database: 'databaseprogettopawm'
-});
+function inviaRecensione(event) {
+  event.preventDefault();
 
-mysqlConnection.connect((err) => {
-  if (err) {
-    console.error('Errore nella connessione al database:', err);
-    return;
-  }
-  console.log('Connessione al database MySQL avvenuta con successo!');
-});
+  const nome = document.getElementById('name').value;
+  const recensione = document.getElementById('review').value;
 
-function inviaRecensione() {
-  const nome = prompt('Inserisci il tuo nome: ');
-  const recensione = prompt('Scrivi la tua recensione: ');
-
-  const query = 'INSERT INTO recensioni (nome, recensione) VALUES (?, ?)';
-  mysqlConnection.query(query, [nome, recensione], (err, results) => {
-    if (err) {
-      console.error('Errore nell\'inserimento della recensione:', err);
-      return;
-    }
-    console.log('Recensione inserita correttamente nel database!');
-    mostraRecensioni();
-  });
+  // Invia i dati al server
+  fetch('http://localhost:3000/recensioni', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ nome, recensione })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Recensione inviata con successo:', data);
+  })
+  .catch(error => console.error('Errore nell\'invio della recensione:', error));
 }
-
-function mostraRecensioni() {
-  const query = 'SELECT * FROM recensioni';
-  mysqlConnection.query(query, (err, results) => {
-    if (err) {
-      console.error('Errore nel recupero delle recensioni:', err);
-      return;
-    }
-
-    results.forEach((row) => {
-      console.log(`Nome: ${row.nome}, Recensione: ${row.recensione}`);
-    });
-  });
-}
-
-inviaRecensione();
