@@ -47,7 +47,7 @@
         <section class="home" id="home">
             <div class="content">
                 <h3> Scopri i nostri <br> unici ed imperdibili <br> piatti </h3>
-                <a href="#" class="btn">Prenota un Tavolo Ora!</a>
+                <a id="prenota-link" href="#" class="btn">Prenota un Tavolo Ora!</a>
             </div>
         </section>
 
@@ -137,6 +137,37 @@
             </div>
 
         </section>
+
+
+
+
+      <!-- 
+            Prenotazioni
+        -->
+        <section id="prenotazioni">
+            <h2>Prenota un Tavolo</h2>
+            <form id="modulo-prenotazione" class="form-prenotazione">
+              <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" class="form-control" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="ora">Ora:</label>
+                <input type="time" id="ora" class="form-control" required>
+              </div>
+          
+              <div class="form-group">
+                <label for="numero-persone">Numero di persone:</label>
+                <input type="number" id="numero-persone" class="form-control" min="1" required>
+              </div>
+          
+              <button type="submit" class="btn-prenota">Prenota</button>
+            </form>
+
+            <div id="success-message" class="success-message" style="display: none;"></div>
+
+          </section>
 
         <!--
             Lascia recensioni

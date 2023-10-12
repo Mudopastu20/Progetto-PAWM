@@ -237,7 +237,25 @@ section{
     color: var(--black);
 }
 
-/* Contact */
+
+#prenotazioni {
+    padding: 2rem 7%;
+    background: #f1e5d2;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+#prenotazioni h2 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+
+
+
+
+/* Recensioni */
 
 .contact .row{
     display: -webkit-box;
@@ -251,17 +269,17 @@ section{
     gap: 2rem;
 }
 
-.contact .row .image{
+.recensioni .row .image{
     -webkit-box-flex: 1;
         -ms-flex: 1 1 40rem;
             flex: 1 1 40rem;
 }
 
-.contact .row .image img{
+.recensioni .row .image img{
     width: 100%;
 }
 
-.contact .row form{
+.recensioni .row form{
     -webkit-box-flex: 1;
         -ms-flex: 1 1 40rem;
             flex: 1 1 40rem;
@@ -399,3 +417,76 @@ section{
         font-size: 50%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stili per la sezione delle prenotazioni */
+.prenotazioni-section {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Stili per il titolo */
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Stili per il form */
+  .prenotazioni-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Stili per i campi del form */
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  /* Stili per il bottone di prenotazione */
+  .btn-prenota {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-prenota:hover {
+    background-color: #0056b3;
+  }
+
+  .success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: inline-block;
+  }

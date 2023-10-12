@@ -20,3 +20,40 @@ function inviaRecensione(event) {
   })
   .catch(error => console.error('Errore nell\'invio della recensione:', error));
 }
+
+
+
+
+
+document.getElementById('modulo-prenotazione').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const data = document.getElementById('data').value;
+  const ora = document.getElementById('ora').value;
+  
+
+  fetch('http://localhost:3000/prenotazioni', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ data, ora })
+  })
+  .then(response => response.json())
+  .then(data => {
+ // Prenotazione avvenuta con successo
+ const successMessage = document.createElement('div');
+ successMessage.textContent = 'Prenotazione avvenuta con successo!';
+ successMessage.classList.add('success-message');
+
+ // Aggiungi il messaggio di successo al documento
+ document.getElementById('prenotazioni').appendChild(successMessage);
+
+ // Nascondi il messaggio di successo dopo 5 secondi
+ setTimeout(() => {
+   successMessage.style.display = 'none';
+ }, 5000);
+})
+
+  .catch(error => console.error('Errore nell\'invio della prenotazione:', error));
+});

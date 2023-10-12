@@ -43,7 +43,24 @@ mysqlConnection.connect((err) => {
       }
     });
   });
+
+
+  app.post('/prenotazioni', (req, res) => {
+    const { data, ora } = req.body;
   
-  app.listen(port, () => {
-    console.log(`Server in ascolto sulla porta ${port}`);
+    const query = 'INSERT INTO prenotazioni (data, ora) VALUES (?, ?)';
+    mysqlConnection.query(query, [data, ora], (err, results) => {
+      if (err) {
+        console.error('Errore nell\'inserimento della prenotazione:', err);
+        res.status(500).json({ error: 'Errore nell\'inserimento della prenotazione' });
+      } else {
+        console.log('Prenotazione inserita correttamente nel database!');
+        res.json({ message: 'Prenotazione inserita correttamente' });
+      }
+    });
+  });
+
+  
+  app.listen(3000, () => {
+    console.log('Server in ascolto sulla porta 3000');
   });
