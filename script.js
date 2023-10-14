@@ -17,12 +17,20 @@ function inviaRecensione(event) {
   .then(response => response.json())
   .then(data => {
     console.log('Recensione inviata con successo:', data);
+
+    // Esempio di chiamata alla funzione con un parametro
+    const parametro = 123;  // Sostituisci con il parametro desiderato
+    eseguiQueryParametrizzata(parametro)
+      .then(results => {
+        // Fai qualcosa con i risultati
+        console.log('Risultati:', results);
+      })
+      .catch(error => {
+        console.error('Errore:', error);
+      });
   })
   .catch(error => console.error('Errore nell\'invio della recensione:', error));
 }
-
-
-
 
 
 document.getElementById('modulo-prenotazione').addEventListener('submit', function(event) {
@@ -41,19 +49,29 @@ document.getElementById('modulo-prenotazione').addEventListener('submit', functi
   })
   .then(response => response.json())
   .then(data => {
- // Prenotazione avvenuta con successo
- const successMessage = document.createElement('div');
- successMessage.textContent = 'Prenotazione avvenuta con successo!';
- successMessage.classList.add('success-message');
+    // Prenotazione avvenuta con successo
+    const successMessage = document.createElement('div');
+    successMessage.textContent = 'Prenotazione avvenuta con successo!';
+    successMessage.classList.add('success-message');
 
- // Aggiungi il messaggio di successo al documento
- document.getElementById('prenotazioni').appendChild(successMessage);
+    // Aggiungi il messaggio di successo al documento
+    document.getElementById('prenotazioni').appendChild(successMessage);
 
- // Nascondi il messaggio di successo dopo 5 secondi
- setTimeout(() => {
-   successMessage.style.display = 'none';
- }, 5000);
-})
+    // Nascondi il messaggio di successo dopo 5 secondi
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
 
+    // Esempio di chiamata alla funzione con un parametro
+    const parametro = 123;  // Sostituisci con il parametro desiderato
+    eseguiQueryParametrizzata(parametro)
+      .then(results => {
+        // Fai qualcosa con i risultati
+        console.log('Risultati:', results);
+      })
+      .catch(error => {
+        console.error('Errore:', error);
+      });
+  })
   .catch(error => console.error('Errore nell\'invio della prenotazione:', error));
 });
