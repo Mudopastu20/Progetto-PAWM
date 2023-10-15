@@ -10,3 +10,19 @@ i due componenti del gruppo hanno sviluppato un'applicazione web chiamata "Risto
 >possibilità di prenotare un tavolo direttamente dall'applicazione
 >giorni e orari di apertura
 >indirizzo del ristorante
+
+
+
+le tecnologie utilizzate per questo progetto sono:
+
+per il frontend:
+
+>HTML
+>CSS
+>JAVASCRIPT
+
+per il backend:
+
+>NODE.JS
+>JSON
+>DATABASE MYSQL
